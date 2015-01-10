@@ -34,3 +34,10 @@ def test_list_personas(personas):
         'name': 'First Last', 'email': 'home@example.com'}
     assert personas['testwork'] == {
         'name': 'First Last', 'email': 'work@example.com'}
+
+
+def test_set_persona(repository):
+    ws.gitpersona.persona.set_persona(
+        {'name': 'First Last', 'email': 'home@example.com'})
+    assert 'First Last' == cmd('git config user.name').strip()
+    assert 'home@example.com' == cmd('git config user.email').strip()

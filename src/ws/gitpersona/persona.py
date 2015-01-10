@@ -10,7 +10,13 @@ def main(argv=None):
     options = parser.parse_args(argv)
     personas = list_personas()
     if options.name:
-        pass
+        persona = personas.get(options.name)
+        if not persona:
+            print('Persona "{}" not found'.format(options.name))
+            raise SystemExit(1)
+        print('Setting user.name="{name}", user.email="{email}"'.format(
+            **persona))
+        set_persona(persona)
     else:
         print('Known personas:')
         for name, persona in personas.items():
@@ -35,6 +41,11 @@ def list_personas():
         result[match.group(1)] = {
             'name': match.group(2), 'email': match.group(3)}
     return result
+
+
+def set_persona(persona):
+    cmd('git config --local user.name "{}"'.format(persona['name']))
+    cmd('git config --local user.email "{}"'.format(persona['email']))
 
 
 def cmd(cmd):
