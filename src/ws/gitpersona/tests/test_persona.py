@@ -22,10 +22,7 @@ def repository(request, tmpdir):
     cwd = os.getcwd()
     request.addfinalizer(lambda: os.chdir(cwd))
     os.chdir(str(tmpdir))
-    # Usually one would put the personas in the global configuration,
-    # but for the tests we simply use the repository config instead.
-    cmd('git init;'
-        .format(dir=str(tmpdir)))
+    cmd('git init')
 
 
 def test_list_personas(personas):
