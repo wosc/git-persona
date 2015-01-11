@@ -53,4 +53,5 @@ def cmd(cmd):
         cmd, shell=True,
         stdout=subprocess.PIPE, stderr=subprocess.PIPE, stdin=subprocess.PIPE)
     stdout, stderr = process.communicate()
-    return stdout.strip()
+    # XXX This simply assumes utf8 -- is that feasible?
+    return stdout.strip().decode('utf8')
