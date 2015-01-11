@@ -24,8 +24,8 @@ def main(argv=None):
                 persona=name.ljust(12), **persona))
         print('Current username:')
         print('  {name} <{email}>'.format(
-            name=cmd('git config user.name').strip(),
-            email=cmd('git config user.email').strip()))
+            name=cmd('git config user.name'),
+            email=cmd('git config user.email')))
 
 
 CONFIG_PERSONA = re.compile('^persona\\.(.*?) ([^<]*) <(.*?)>$')
@@ -53,4 +53,4 @@ def cmd(cmd):
         cmd, shell=True,
         stdout=subprocess.PIPE, stderr=subprocess.PIPE, stdin=subprocess.PIPE)
     stdout, stderr = process.communicate()
-    return stdout
+    return stdout.strip()
