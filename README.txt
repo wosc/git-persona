@@ -2,6 +2,11 @@
 git-persona
 ===========
 
+.. pandoc -f rst -t markdown -o README.md README.txt
+
+.. image:: https://travis-ci.org/wosc/git-persona.png
+   :target: https://travis-ci.org/wosc/git-persona
+
 git-persona provides an easy way to configure the git username on a per
 repository basis. It is inspired by the mercurial extension `hg-persona`_.
 
