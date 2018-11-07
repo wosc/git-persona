@@ -4,7 +4,7 @@ CHANGES
 1.1 (unreleased)
 ----------------
 
-- Nothing changed yet.
+- Make current-setuptools compatible
 
 
 1.0 (2015-01-11)
