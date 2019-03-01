@@ -33,7 +33,7 @@ CONFIG_PERSONA = re.compile('^persona\\.(.*?) ([^<]*) <(.*?)>$')
 
 def list_personas():
     result = {}
-    config = cmd('git config --global --get-regex ^persona\\.')
+    config = cmd('git config --global --includes --get-regex ^persona\\.')
     for line in config.splitlines():
         match = CONFIG_PERSONA.search(line)
         if not match:
