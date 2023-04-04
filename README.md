@@ -1,8 +1,6 @@
 git-persona
 ===========
 
-[![image](https://travis-ci.org/wosc/git-persona.png)](https://travis-ci.org/wosc/git-persona)
-
 git-persona provides an easy way to configure the git username on a per
 repository basis. It is inspired by the mercurial extension
 [hg-persona](https://bitbucket.org/0branch/hg-persona).
