@@ -4,7 +4,7 @@ CHANGES
 1.1 (unreleased)
 ----------------
 
-- Nothing changed yet.
+- Drop Python-2 support
 
 
 1.0.1 (2018-11-07)
